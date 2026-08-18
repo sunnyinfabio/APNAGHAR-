@@ -23,109 +23,112 @@
 </head>
 <body>
 
-  <!-- Top Real-time Status Bar -->
-  <div class="top-status-bar">
-    <div class="container">
-      <div class="status-wrapper">
-        <div class="status-items">
-          <div class="status-item">
-            <span class="indicator"></span>
-            <span><strong>Live at AapnoGhar:</strong> ☀️ 28°C • Clear Skies</span>
+  <!-- Master Header (Top Live Status + Navigation Bar) -->
+  <header class="main-header">
+    <!-- Top Real-time Status Bar -->
+    <div class="top-status-bar">
+      <div class="container">
+        <div class="status-wrapper">
+          <div class="status-items">
+            <div class="status-item">
+              <span class="indicator"></span>
+              <span><strong>Live at AapnoGhar:</strong> ☀️ 28°C • Clear Skies</span>
+            </div>
+            <div class="status-item">
+              <span>🎢 <strong>21+ Rides & 24+ Activities Open</strong></span>
+            </div>
+            <div class="status-item">
+              <span>💦 <strong>Water Park Open:</strong> 10:00 AM - 07:00 PM</span>
+            </div>
+            <div class="status-item">
+              <span>🍴 <strong>Baza Multi-Cuisine Open</strong></span>
+            </div>
           </div>
-          <div class="status-item">
-            <span>🎢 <strong>21+ Rides & 24+ Activities Open</strong></span>
+          <div class="status-location">
+            <span>📍 <strong>NH-8, Sector 77, Gurugram</strong> (32 km from Central Delhi)</span>
           </div>
-          <div class="status-item">
-            <span>💦 <strong>Water Park Open:</strong> 10:00 AM - 07:00 PM</span>
-          </div>
-          <div class="status-item">
-            <span>🍴 <strong>Baza Multi-Cuisine Open</strong></span>
-          </div>
-        </div>
-        <div class="status-location">
-          <span>📍 <strong>NH-8, Sector 77, Gurugram</strong> (32 km from Central Delhi)</span>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Floating Navigation Header with Complete Sub-page Dropdowns -->
-  <header class="main-header">
-    <div class="container">
-      <div class="header-container">
-        <a href="/index.html" class="brand-logo">
-          <img src="/assets/icons/logo.png" alt="AapnoGhar Resort" />
-        </a>
-        
-        <nav>
-          <ul class="nav-links">
-            <li class="nav-item">
-              <a href="#experiences" class="nav-link">Experiences ▾</a>
-              <ul class="nav-dropdown">
-                <li><a href="/water-park.html">💦 Water Park</a></li>
-                <li><a href="/amusement-park.html">🎢 Amusement Park</a></li>
-                <li><a href="/activity-park.html">🧗 Activity Park</a></li>
-                <li><a href="/rope-course-activities.html">🎯 Rope Course</a></li>
-              </ul>
-            </li>
+    <!-- Main Navigation Bar -->
+    <div class="nav-bar-inner">
+      <div class="container">
+        <div class="header-container">
+          <a href="/index.html" class="brand-logo">
+            <img src="/assets/icons/logo.png" alt="AapnoGhar Resort" />
+          </a>
+          
+          <nav>
+            <ul class="nav-links">
+              <li class="nav-item">
+                <a href="#experiences" class="nav-link">Experiences ▾</a>
+                <ul class="nav-dropdown">
+                  <li><a href="/water-park.html">💦 Water Park</a></li>
+                  <li><a href="/amusement-park.html">🎢 Amusement Park</a></li>
+                  <li><a href="/activity-park.html">🧗 Activity & Adventure Drills</a></li>
+                  <li><a href="/rope-course-activities.html">🧗 Military Rope Courses</a></li>
+                </ul>
+              </li>
 
-            <li class="nav-item">
-              <a href="#stay" class="nav-link">Rooms & Stay ▾</a>
-              <ul class="nav-dropdown">
-                <li><a href="/stay.html">🏨 All Suites & Rooms</a></li>
-                <li><a href="/presidential-suite-room-1.html">👑 Presidential Suite (800 sq ft)</a></li>
-                <li><a href="/suite-room.html">🛋️ Suite Room</a></li>
-                <li><a href="/luxury-room.html">✨ Luxury Room</a></li>
-                <li><a href="/luxury-room-2.html">🌿 Luxury Room 2</a></li>
-                <li><a href="/Luxury-Room-with-Shower-Glass-Partition.html">🚿 Luxury with Glass Shower</a></li>
-                <li><a href="/deluxe-room.html">🛏️ Deluxe Room</a></li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a href="#stay" class="nav-link">Rooms & Stay ▾</a>
+                <ul class="nav-dropdown">
+                  <li><a href="/stay.html">🏨 All Suites & Rooms</a></li>
+                  <li><a href="/presidential-suite-room-1.html">👑 Presidential Suite (800 sq ft)</a></li>
+                  <li><a href="/suite-room.html">🛋️ Suite Room</a></li>
+                  <li><a href="/luxury-room.html">✨ Luxury Room</a></li>
+                  <li><a href="/luxury-room-2.html">🌿 Luxury Room 2</a></li>
+                  <li><a href="/Luxury-Room-with-Shower-Glass-Partition.html">🚿 Luxury with Glass Shower</a></li>
+                  <li><a href="/deluxe-room.html">🛏️ Deluxe Room</a></li>
+                </ul>
+              </li>
 
-            <li class="nav-item">
-              <a href="#weddings" class="nav-link">Venues & Events ▾</a>
-              <ul class="nav-dropdown">
-                <li><a href="/wedding-ceremony.html">💍 Royal Weddings</a></li>
-                <li><a href="/bhanwar-party-lawn.html">🌳 Bhanwar Lawn (1500+ Guests)</a></li>
-                <li><a href="/chander-party-lawn.html">🌿 Chander Lawn (800+ Guests)</a></li>
-                <li><a href="/abhinandan-hall.html">🏛️ Abhinandan Hall (7000 sq ft)</a></li>
-                <li><a href="/swagatam-hall.html">🏢 Swagatam Hall</a></li>
-                <li><a href="/corporate-events-conferences.html">💼 Corporate Offsites</a></li>
-                <li><a href="/meet-and-celebrate.html">🎉 Meet & Celebrate</a></li>
-                <li><a href="/sangeet-ceremony.html">🎶 Sangeet & Mehendi</a></li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a href="#weddings" class="nav-link">Venues & Events ▾</a>
+                <ul class="nav-dropdown">
+                  <li><a href="/wedding-ceremony.html">💍 Royal Weddings</a></li>
+                  <li><a href="/bhanwar-party-lawn.html">🌳 Bhanwar Lawn (1500+ Guests)</a></li>
+                  <li><a href="/chander-party-lawn.html">🌿 Chander Lawn (800+ Guests)</a></li>
+                  <li><a href="/abhinandan-hall.html">🏛️ Abhinandan Hall (7000 sq ft)</a></li>
+                  <li><a href="/swagatam-hall.html">🏢 Swagatam Hall</a></li>
+                  <li><a href="/corporate-events-conferences.html">💼 Corporate Offsites</a></li>
+                  <li><a href="/meet-and-celebrate.html">🎉 Meet & Celebrate</a></li>
+                  <li><a href="/sangeet-ceremony.html">🎶 Sangeet & Mehendi</a></li>
+                </ul>
+              </li>
 
-            <li class="nav-item">
-              <a href="#dining" class="nav-link">Dine-In ▾</a>
-              <ul class="nav-dropdown">
-                <li><a href="/eat-and-drink-offer.html">🍴 Baza Restaurant</a></li>
-                <li><a href="#dining">🍲 Ghar Ka Aangan Special Menu</a></li>
-                <li><a href="#dining">🍢 Purani Dilli Chaat Counter</a></li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a href="#dining" class="nav-link">Dine-In ▾</a>
+                <ul class="nav-dropdown">
+                  <li><a href="/eat-and-drink-offer.html">🍴 Baza Restaurant</a></li>
+                  <li><a href="#dining">🍲 Ghar Ka Aangan Special Menu</a></li>
+                  <li><a href="#dining">🍢 Purani Dilli Chaat Counter</a></li>
+                </ul>
+              </li>
 
-            <li class="nav-item">
-              <a href="#pricing" class="nav-link">Packages ▾</a>
-              <ul class="nav-dropdown">
-                <li><a href="/picnic-packages.html">🎟️ Day Picnic Packages</a></li>
-                <li><a href="/family-stay-packages.html">👨‍👩‍👧 Family Stay Packages</a></li>
-                <li><a href="/eat-and-drink-offer.html">📋 Dining & Special Offers</a></li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a href="#pricing" class="nav-link">Packages ▾</a>
+                <ul class="nav-dropdown">
+                  <li><a href="/picnic-packages.html">🎟️ Day Picnic Packages</a></li>
+                  <li><a href="/family-stay-packages.html">👨‍👩‍👧 Family Stay Packages</a></li>
+                  <li><a href="/eat-and-drink-offer.html">📋 Dining & Special Offers</a></li>
+                </ul>
+              </li>
 
-            <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="/blog.html" class="nav-link">Blog</a></li>
-            <li><a href="/contact-us.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
+              <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="/blog.html" class="nav-link">Blog</a></li>
+              <li><a href="/contact-us.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
 
-        <div class="header-actions">
-          <button class="btn btn-primary" data-trigger-booking="all">
-            <span>Book Your Day</span>
-            <span>➔</span>
-          </button>
-          <button class="mobile-menu-toggle" aria-label="Toggle Navigation">☰</button>
+          <div class="header-actions">
+            <button class="btn btn-primary" data-trigger-booking="all">
+              <span>Book Your Day</span>
+              <span>➔</span>
+            </button>
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation">☰</button>
+          </div>
         </div>
       </div>
     </div>
