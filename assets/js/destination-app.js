@@ -26,6 +26,10 @@ function initExperienceVideoPlayers() {
     const trigger = card.querySelector('.play-video-trigger');
     if (!video) return;
 
+    // Ensure muted for unrestricted browser autoplay
+    video.muted = true;
+    video.playsInline = true;
+
     function playVideo() {
       document.querySelectorAll('.video-exp-card video').forEach(v => {
         if (v !== video) {
@@ -37,7 +41,15 @@ function initExperienceVideoPlayers() {
       });
 
       card.classList.add('playing');
-      video.play().catch(() => {});
+      video.muted = true;
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {
+          // If playback was blocked, retry with explicit muted
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+      }
       if (trigger) trigger.textContent = '⏸ Pause Video';
     }
 
