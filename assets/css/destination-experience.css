@@ -191,52 +191,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* Top Status Bar */
-.top-status-bar {
-  background: rgba(7, 21, 17, 0.95);
-  color: var(--text-light-muted);
-  font-size: 0.8rem;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.status-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.status-items {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.status-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-}
-
-.status-item .indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10b981;
-  display: inline-block;
-  box-shadow: 0 0 10px #10b981;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
-}
-
 /* Header & Mega Navigation */
 .main-header {
   position: fixed;
@@ -256,7 +210,16 @@ button {
 }
 
 .nav-bar-inner {
-  padding: 12px 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Live Status Strip (Under Navigation Bar) */
+.top-status-bar {
+  background: rgba(7, 21, 17, 0.94);
+  color: var(--text-light-muted);
+  font-size: 0.8rem;
+  padding: 7px 0;
 }
 
 .header-container {
