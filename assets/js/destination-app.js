@@ -81,30 +81,53 @@ function initExperienceVideoPlayers() {
   });
 }
 
-/* 1. Header Scroll Behavior - Smart Hide on Scroll Down */
+/* 1. Header Scroll Behavior - Boundary Collision Trigger */
 function initHeaderScroll() {
   const header = document.querySelector('.main-header');
+  const heroBadge = document.querySelector('.hero-badge');
   let lastScrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
+  function handleScroll() {
     const currentScrollY = window.scrollY;
+    if (!header) return;
 
-    if (currentScrollY > 60) {
-      header?.classList.add('scrolled');
-      if (currentScrollY > lastScrollY && currentScrollY > 180) {
-        // Scrolling down -> hide navbar smoothly
-        header?.classList.add('header-hidden');
-      } else {
-        // Scrolling up -> show navbar
-        header?.classList.remove('header-hidden');
+    if (currentScrollY <= 15) {
+      // At the very top -> visible and unscrolled
+      header.classList.remove('header-hidden');
+      header.classList.remove('scrolled');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    header.classList.add('scrolled');
+
+    // Dynamic Boundary Detection:
+    // When the top of hero badge touches the bottom boundary of the header:
+    if (heroBadge) {
+      const headerBottom = header.offsetHeight;
+      const badgeTop = heroBadge.getBoundingClientRect().top;
+
+      if (badgeTop <= headerBottom + 10 && currentScrollY > lastScrollY) {
+        // Scrolling down & text touches header boundary -> Hide navbar smoothly
+        header.classList.add('header-hidden');
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up -> Reveal navbar
+        header.classList.remove('header-hidden');
       }
     } else {
-      header?.classList.remove('scrolled');
-      header?.classList.remove('header-hidden');
+      // General fallback if hero badge is not on page
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
     }
 
     lastScrollY = currentScrollY;
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 }
 
 /* 2. Persona Switcher */
