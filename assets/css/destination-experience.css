@@ -244,7 +244,11 @@ button {
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition: var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, padding 0.3s ease;
+}
+
+.main-header.header-hidden {
+  transform: translateY(-100%);
 }
 
 .main-header.scrolled {
@@ -354,7 +358,7 @@ button {
   justify-content: center;
   color: #ffffff;
   overflow: hidden;
-  padding: 140px 0 80px;
+  padding: 220px 0 100px;
 }
 
 .hero-video-bg {
@@ -1387,27 +1391,10 @@ button {
 .faq-content { padding: 0 24px 20px; font-size: 0.95rem; color: var(--text-muted); display: none; }
 .faq-item.open .faq-content { display: block; }
 
-/* Sticky Booking Dock */
+/* Sticky Booking Dock - Disabled to preserve screen space */
 .sticky-booking-dock {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background: rgba(12, 33, 26, 0.94);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-  transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none !important;
 }
-
-.sticky-booking-dock.active { transform: translateY(0); }
-.sticky-dock-wrapper { display: flex; align-items: center; justify-content: space-between; color: #ffffff; }
-.sticky-dock-info { display: flex; align-items: center; gap: 24px; }
-.sticky-dock-price .label { font-size: 0.75rem; color: var(--text-light-muted); text-transform: uppercase; }
-.sticky-dock-price .val { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent-gold-light); }
 
 /* Booking Modal */
 .booking-modal-overlay {

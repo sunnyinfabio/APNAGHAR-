@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAttractionFilters();
   initInteractiveMap();
   initBookingFunnelModal();
-  initStickyDock();
   initTourModal();
   initFaqAccordion();
   initPhotoCarousel();
@@ -82,16 +81,30 @@ function initExperienceVideoPlayers() {
   });
 }
 
-/* 1. Header Scroll Behavior */
+/* 1. Header Scroll Behavior - Smart Hide on Scroll Down */
 function initHeaderScroll() {
   const header = document.querySelector('.main-header');
+  let lastScrollY = window.scrollY;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 60) {
       header?.classList.add('scrolled');
+      if (currentScrollY > lastScrollY && currentScrollY > 180) {
+        // Scrolling down -> hide navbar smoothly
+        header?.classList.add('header-hidden');
+      } else {
+        // Scrolling up -> show navbar
+        header?.classList.remove('header-hidden');
+      }
     } else {
       header?.classList.remove('scrolled');
+      header?.classList.remove('header-hidden');
     }
-  });
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 }
 
 /* 2. Persona Switcher */
