@@ -332,7 +332,10 @@ button {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.72);
+  filter: brightness(0.98) contrast(1.08) saturate(1.18);
+  image-rendering: -webkit-optimize-contrast;
+  transform: scale(1.02);
+  backface-visibility: hidden;
 }
 
 .hero-overlay {
@@ -342,7 +345,8 @@ button {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(7, 31, 24, 0.75) 0%, rgba(7, 31, 24, 0.4) 50%, rgba(7, 31, 24, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(5, 23, 18, 0.42) 0%, rgba(5, 23, 18, 0.1) 40%, rgba(5, 23, 18, 0.65) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -358,14 +362,15 @@ button {
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(12, 33, 26, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-full);
   font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .hero-title {
@@ -376,19 +381,18 @@ button {
   line-height: 1.05;
   text-transform: uppercase;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ffffff 0%, #d8f3dc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: clamp(1.2rem, 2.2vw, 1.8rem);
-  color: #e2e8f0;
+  color: #f1f5f9;
   margin-bottom: 36px;
   font-weight: 400;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .hero-cta-group {
