@@ -1516,8 +1516,49 @@ button {
 .footer-brand p { font-size: 0.95rem; line-height: 1.7; margin-top: 18px; max-width: 320px; }
 .footer-links h5 { color: #ffffff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
 .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-links li a:hover { color: var(--accent-aqua); }
 .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; }
+
+/* Site Credits */
+.poweredBy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+.creditLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0.85;
+  transition: 0.35s ease;
+}
+
+.creditLogo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(253, 181, 20, 0.5);
+}
+
+.creditLogo img {
+  height: 16px;
+  width: auto;
+  display: block;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
