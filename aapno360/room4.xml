@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panorama>
+<!-- Pano2VR 3.1.4 panorama configuration -->
+<view fovmode="0">
+<start pan="140" tilt="0" fov="70"/>
+<min pan="0" tilt="-68" fov="0.01"/>
+<max pan="360" tilt="73" fov="120"/>
+</view>
+<autorotate speed="0.100" delay="5.00" returntohorizon="0.000" startloaded="0" />
+<input tilesize="1250" tilescale="1.008" tile0url="images/05_o_0.jpg" tile1url="images/05_o_1.jpg" tile2url="images/05_o_2.jpg" tile3url="images/05_o_3.jpg" tile4url="images/05_o_4.jpg" tile5url="images/05_o_5.jpg" />
+<userdata title="" description="" author="" datetime="" copyright="" source="" info="" comment="" />
+<control sensitivity="8" simulatemass="1" lockedmouse="0" lockedkeyboard="0" lockedwheel="0" invertwheel="0" speedwheel="1" dblclickfullscreen="0" invertcontrol="1" />
+<sounds>
+</sounds>
+</panorama>

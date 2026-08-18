@@ -1,0 +1,25 @@
+
+@font-face {
+    font-family: 'mikadoblack';
+    src: url('mikado-bold-webfont.woff2') format('woff2'),url('mikado-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mikadomedium';
+    src: url('mikado-medium-webfont.woff2') format('woff2'),url('mikado-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'just_another_handregular';
+    src: url('justanotherhand-regular-webfont.woff2') format('woff2'),
+        url('justanotherhand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
