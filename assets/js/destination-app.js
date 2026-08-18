@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPersonaSwitcher();
   initBuildDayCalculator();
   initAttractionFilters();
+  initRoomsToggle();
+  initVenuesCarousel();
   initInteractiveMap();
   initBookingFunnelModal();
   initTourModal();
@@ -145,93 +147,93 @@ function initPersonaSwitcher() {
   const PERSONAS = {
     family: {
       badge: '👨‍👩‍👧 Family Favourite',
-      title: 'A Joyful Day for All Generations',
-      desc: 'Unite the entire family with gentle water slides, carousel rides, puppet shows, traditional village games, and hearty buffet meals.',
+      title: 'Joyful Day for All Generations',
+      desc: 'Unite the entire family with gentle water slides, carousel rides, traditional village games, and hearty buffet meals.',
       media: '/AapnoGharlmages/EntertainmentImages/activity-park-1-aapno-ghar.jpg',
       highlights: [
-        '<span>✓</span> Unlimited 21+ Family Rides',
-        '<span>✓</span> Kids Shallow Lagoons & Rain Dance',
-        '<span>✓</span> Traditional Cart Rides & Pottery',
-        '<span>✓</span> Multi-Cuisine Unlimited Buffet'
+        '🎠 21+ Family Rides',
+        '💦 Shallow Splash Lagoons',
+        '🎭 Village Games & Shows',
+        '🍲 Multi-Cuisine Buffet'
       ],
       price: '₹1,599',
       unit: '/ person',
-      packageId: 'family-day'
+      packageId: 'water-amuse'
     },
     water: {
       badge: '💦 Extreme Splash',
-      title: 'High-Thrill Water Slides & Wave Pool',
-      desc: 'Slide into heart-pounding aquatic thrills with the Turbo Twister, Aqua Tube, mist pools, tipping buckets, and high-energy rain dance beats.',
+      title: 'High-Thrill Aquatics & Wave Pool',
+      desc: 'Heart-pounding aquatic thrills with Turbo Twister, Aqua Tube, mist pools, tipping buckets, and DJ rain dance beats.',
       media: '/AapnoGharlmages/PhotoImage/water-park-aapno-ghar.jpg',
       highlights: [
-        '<span>✓</span> Giant Turbo Twister & Aqua Tubes',
-        '<span>✓</span> Massive Family Fun Wave Pool',
-        '<span>✓</span> DJ Rain Dance Arena',
-        '<span>✓</span> Refreshing Cool Drinks & Snacks'
+        '🌊 Giant Wave Pool',
+        '🌀 Turbo Twister Slide',
+        '🎶 DJ Rain Dance Arena',
+        '🥤 Cool Drinks & Snacks'
       ],
       price: '₹1,399',
       unit: '/ person',
-      packageId: 'water-pass'
+      packageId: 'water-amuse'
     },
     birthday: {
       badge: '🎂 Birthday Celebrations',
-      title: 'Magical Parties & Non-Stop Fun',
-      desc: 'Give your child or loved one a birthday they will talk about for years with private lawn space, balloon decor, adventure rides, and customized menus.',
+      title: 'Magical Birthday Carnival',
+      desc: 'Make celebrations unforgettable with private decorated cabanas, mascot greetings, thrill rides, and live street chaat.',
       media: '/AapnoGharlmages/WeddeingEventImages/abhinandan-hall-l.jpg',
       highlights: [
-        '<span>✓</span> Private Event Lawn / Banquet Access',
-        '<span>✓</span> Full Amusement & Water Park Passes',
-        '<span>✓</span> Custom Cake, Decor & DJ Music',
-        '<span>✓</span> Live Magic & Puppet Shows'
+        '🎂 Private Decorated Cabana',
+        '🎪 Magic & Puppet Shows',
+        '🍿 Live Street Chaat',
+        '🎢 Full Park Access Passes'
       ],
       price: '₹1,799',
-      unit: '/ guest (Min 20)',
-      packageId: 'birthday-pack'
+      unit: '/ guest',
+      packageId: 'birthday'
     },
     wedding: {
       badge: '💍 Royal Destination Wedding',
-      title: 'Royal Lawns & Unforgettable Nuptials',
-      desc: 'Say "I Do" surrounded by 9 acres of lush greenery, grand banquet halls, customizable luxury suites for guests, and royal catering.',
+      title: 'Royal Destination Nuptials',
+      desc: 'Say "I Do" amidst 9 acres of lush greenery, grand banquet halls, customizable luxury suites, and royal masterchef catering.',
       media: '/AapnoGharlmages/WeddeingEventImages/bhanwar-party-lawn-l.jpg',
       highlights: [
-        '<span>✓</span> Bhanwar & Chander Lawns (Up to 2,000 Guests)',
-        '<span>✓</span> 67 Luxury Air-Conditioned Rooms',
-        '<span>✓</span> Dedicated Wedding Event Coordinators',
-        '<span>✓</span> Grand Stage, Mandap & Royal Feast'
+        '🏰 3,000-Guest Lawns',
+        '🏛️ Grand AC Banquet Halls',
+        '👑 Custom Mandap & Decor',
+        '🏨 67 Boutique Suites'
       ],
       price: 'Custom',
       unit: 'Quote on Request',
-      packageId: 'wedding-pkg'
+      packageId: 'wedding'
     },
     corporate: {
       badge: '🏢 Corporate Offsite',
-      title: 'Team Building, Conferences & Leisure',
-      desc: 'Energize your workforce with state-of-the-art conference facilities, rope courses, team challenges, and poolside networking dinners.',
+      title: 'Team Offsite & Adventure Drills',
+      desc: 'Energize teams with state-of-the-art conference halls, rope courses, 24+ obstacle drills, and evening cocktail lawns.',
       media: '/AapnoGharlmages/WeddeingEventImages/corporate-events-conferences-l.jpg',
       highlights: [
-        '<span>✓</span> AC Conference Halls with AV Tech',
-        '<span>✓</span> 24+ Adventure & Team Building Drills',
-        '<span>✓</span> Welcome Drinks, Lavish Lunch & Hi-Tea',
-        '<span>✓</span> Evening DJ & Cocktail Lawns'
+        '💼 AC AV Conferences',
+        '🧗 24+ Team Drills',
+        '🍲 Gourmet Buffet & Hi-Tea',
+        '🍸 Evening Cocktail Lawns'
       ],
       price: '₹1,850',
       unit: '/ employee',
-      packageId: 'corporate-pkg'
+      packageId: 'water-amuse'
     },
     staycation: {
       badge: '🏨 Weekend Staycation',
-      title: 'Lush Resort Retreat & Unlimited Play',
-      desc: 'Escape the city rush. Relax in expansive suites overlooking garden vistas with all-inclusive access to the water and amusement parks.',
+      title: 'Lush Resort Retreat & Play',
+      desc: 'Escape the city rush. Relax in expansive luxury suites with 2-day all-inclusive park passes and lavish buffet breakfast.',
       media: '/AapnoGharlmages/RoomImages/presidential-suite-room-2.jpg',
       highlights: [
-        '<span>✓</span> Stay in Luxury or Presidential Suites',
-        '<span>✓</span> Complimentary Full-Day Park Passes',
-        '<span>✓</span> Gourmet Buffet Breakfast & Dinner',
-        '<span>✓</span> Wi-Fi, Poolside Access & Room Service'
+        '🛏️ Boutique Luxury Suites',
+        '💦 2-Day Park Access',
+        '🍳 Lavish Buffet Breakfast',
+        '🚗 Free Valet Parking'
       ],
       price: '₹6,499',
       unit: '/ room / night',
-      packageId: 'stay-play'
+      packageId: 'staycation'
     }
   };
 
@@ -251,7 +253,7 @@ function initPersonaSwitcher() {
       if (unitEl) unitEl.textContent = data.unit;
 
       if (highlightsEl) {
-        highlightsEl.innerHTML = data.highlights.map(h => `<li>${h}</li>`).join('');
+        highlightsEl.innerHTML = data.highlights.map(h => `<div class="persona-chip">${h}</div>`).join('');
       }
 
       if (ctaBtn) {
@@ -261,26 +263,115 @@ function initPersonaSwitcher() {
   });
 }
 
-/* 3. Attraction Category Filter */
+/* 3. Attraction Category Filter with Initial 3-Card Limit and "See All" Option */
 function initAttractionFilters() {
   const filterBtns = document.querySelectorAll('.filter-tab-btn');
-  const items = document.querySelectorAll('.ride-item');
+  const items = Array.from(document.querySelectorAll('.ride-item'));
+  const toggleBtn = document.getElementById('toggleSeeAllRides');
+  const seeAllText = document.getElementById('seeAllRidesText');
+  const seeAllIcon = document.getElementById('seeAllRidesIcon');
+  const seeAllWrap = document.querySelector('.rides-see-more-wrap');
+
+  let currentFilter = 'all';
+  let isShowingAllRides = false;
+
+  function updateRideDisplay() {
+    let visibleCount = 0;
+    const matchingItems = items.filter(item => currentFilter === 'all' || item.dataset.type === currentFilter);
+
+    items.forEach(item => {
+      const matches = (currentFilter === 'all' || item.dataset.type === currentFilter);
+      if (!matches) {
+        item.style.display = 'none';
+        return;
+      }
+
+      if (isShowingAllRides || currentFilter !== 'all') {
+        item.style.display = 'flex';
+      } else {
+        // Only show first 3 cards in 'all' view when not expanded
+        if (visibleCount < 3) {
+          item.style.display = 'flex';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      }
+    });
+
+    // Update toggle button visibility and text
+    if (currentFilter === 'all') {
+      if (seeAllWrap) seeAllWrap.style.display = 'flex';
+      if (seeAllText) seeAllText.textContent = isShowingAllRides ? 'Show Less Attractions' : 'See All Attractions (45+)';
+      if (seeAllIcon) seeAllIcon.textContent = isShowingAllRides ? '▴' : '▾';
+    } else {
+      if (seeAllWrap) seeAllWrap.style.display = 'none';
+    }
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      items.forEach(item => {
-        if (filter === 'all' || item.dataset.type === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+      currentFilter = btn.dataset.filter || 'all';
+      updateRideDisplay();
     });
   });
+
+  toggleBtn?.addEventListener('click', () => {
+    isShowingAllRides = !isShowingAllRides;
+    updateRideDisplay();
+
+    if (!isShowingAllRides) {
+      // Smoothly scroll back to section header when collapsing
+      const section = document.getElementById('amusement');
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Initial render with 3 cards only
+  updateRideDisplay();
+}
+
+/* 3b. Rooms & Suites 3-Card Initial Limit and "See All" Option */
+function initRoomsToggle() {
+  const roomCards = Array.from(document.querySelectorAll('.room-item'));
+  const toggleBtn = document.getElementById('toggleSeeAllRooms');
+  const seeAllText = document.getElementById('seeAllRoomsText');
+  const seeAllIcon = document.getElementById('seeAllRoomsIcon');
+  if (!roomCards.length || !toggleBtn) return;
+
+  let isShowingAllRooms = false;
+
+  function updateRoomsDisplay() {
+    roomCards.forEach((card, index) => {
+      if (isShowingAllRooms || index < 3) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (seeAllText) {
+      seeAllText.textContent = isShowingAllRooms ? 'Show Less Rooms & Suites' : 'See All Rooms & Suites (6)';
+    }
+    if (seeAllIcon) {
+      seeAllIcon.textContent = isShowingAllRooms ? '▴' : '▾';
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    isShowingAllRooms = !isShowingAllRooms;
+    updateRoomsDisplay();
+
+    if (!isShowingAllRooms) {
+      const section = document.getElementById('stay');
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Initial render: show first 3 rooms only
+  updateRoomsDisplay();
 }
 
 /* 4. Build Your Day Calculator */
@@ -383,16 +474,87 @@ function initInteractiveMap() {
   });
 }
 
-/* 6. 5-Step Modern Booking Funnel Modal */
+/* 6. 5-Step Modern Booking Funnel Modal (Concise with Click-to-Expand Details) */
 let bookingFunnel = {
   currentStep: 1,
   category: 'water-amuse',
-  date: new Date().toISOString().split('T')[0],
+  date: getFormattedDate(1), // Tomorrow by default
   adults: 2,
   children: 1,
   packageRate: 1599,
-  packageName: 'Water + Amusement Pass'
+  packageName: 'Water + Amusement Park Pass'
 };
+
+const FUNNEL_PACKAGE_DETAILS = {
+  'water-amuse': {
+    title: '💦 Water + Amusement Park Pass',
+    rate: 1599,
+    rateLabel: '₹1,599 / person',
+    inclusions: [
+      'Unlimited Water Park & Wave Pool access',
+      '21+ Thrilling Amusement Rides',
+      '24+ Adventure Activities & Drills',
+      'Full Food Itinerary (Breakfast, Lunch Buffet & Evening Chaat)',
+      'Live Magic Show & Puppet Shows',
+      'Complimentary Locker & Shower Facilities'
+    ],
+    badges: ['⏱ 10:00 AM – 07:00 PM', '👶 Kids <33" FREE', '🥗 100% Veg Multi-Cuisine Buffet']
+  },
+  'staycation': {
+    title: '🏨 Resort Staycation & Play',
+    rate: 6499,
+    rateLabel: '₹6,499 / night',
+    inclusions: [
+      '1 Night Stay in Luxury Boutique Room',
+      '2-Day Unlimited Passes to Water & Amusement Parks',
+      'Lavish Multi-Cuisine Buffet Breakfast',
+      'Evening Hi-Tea & Live Chaat Counter',
+      'Garden View Balcony & High-Speed Wi-Fi',
+      'Complimentary Valet Parking'
+    ],
+    badges: ['🕒 Check-in 12:00 PM', '🕚 Check-out 10:30 AM', '🍽 In-Room Dining Available']
+  },
+  'birthday': {
+    title: '🎂 Birthday Celebration Carnival',
+    rate: 1799,
+    rateLabel: '₹1,799 / guest',
+    inclusions: [
+      'Reserved Decorated Birthday Cabana/Area',
+      'Full Park Passes (Water + Amusement) for all guests',
+      'Welcome Mascot Greeting & Cake Cutting setup',
+      'Lavish Feast Buffet & Unlimited Live Chaat',
+      'Dedicated Event Concierge Support'
+    ],
+    badges: ['🎉 Custom Decor Options', '📸 Selfie Photo-Ops', '🎁 Birthday Surprise Voucher']
+  },
+  'wedding': {
+    title: '💍 Royal Wedding Lawn Enquiry',
+    rate: 0,
+    rateLabel: 'Custom Quote',
+    inclusions: [
+      'Chander & Bhanwar Party Lawns (up to 3,000 guests)',
+      'Abhinandan & Swagatam Air-Conditioned Banquet Halls',
+      'Custom Mandap & Themed Lighting Setups',
+      'Gourmet Multi-Cuisine Royal Catering Menu',
+      '67 Luxury Boutique Rooms for Bridal & Guest Lodging'
+    ],
+    badges: ['🏰 9-Acre Grand Venue', '🅿️ 500+ Car Parking', '👨‍💼 Dedicated Wedding Concierge']
+  }
+};
+
+function getFormattedDate(offsetDays = 0) {
+  const d = new Date();
+  d.setDate(d.getDate() + offsetDays);
+  return d.toISOString().split('T')[0];
+}
+
+function getUpcomingSaturday() {
+  const d = new Date();
+  const day = d.getDay();
+  const diff = (6 - day + 7) % 7 || 7; // days to next Saturday
+  d.setDate(d.getDate() + diff);
+  return d.toISOString().split('T')[0];
+}
 
 function initBookingFunnelModal() {
   const overlay = document.getElementById('bookingModal');
@@ -400,6 +562,7 @@ function initBookingFunnelModal() {
   const nextBtn = document.getElementById('modalNextBtn');
   const prevBtn = document.getElementById('modalPrevBtn');
 
+  // Trigger buttons across page
   document.querySelectorAll('[data-trigger-booking]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -413,18 +576,79 @@ function initBookingFunnelModal() {
     if (e.target === overlay) overlay.classList.remove('open');
   });
 
+  // Package Choice Cards Selection
   document.querySelectorAll('.booking-choice-card').forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      // If user clicked the detail button directly, handled separately
+      if (e.target.closest('.btn-pkg-details')) return;
+
       document.querySelectorAll('.booking-choice-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
-      bookingFunnel.category = card.dataset.cat;
+      const cat = card.dataset.cat;
+      bookingFunnel.category = cat;
       if (card.dataset.rate) {
         bookingFunnel.packageRate = parseInt(card.dataset.rate, 10);
         bookingFunnel.packageName = card.dataset.pkgname || 'Selected Package';
       }
+      renderPackageDrawer(cat);
     });
   });
 
+  // "What's Included" Detail Triggers
+  document.querySelectorAll('.btn-pkg-details').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pkgKey = btn.dataset.detailPkg;
+      const card = btn.closest('.booking-choice-card');
+      if (card) {
+        document.querySelectorAll('.booking-choice-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        bookingFunnel.category = pkgKey;
+        if (card.dataset.rate) {
+          bookingFunnel.packageRate = parseInt(card.dataset.rate, 10);
+          bookingFunnel.packageName = card.dataset.pkgname || 'Selected Package';
+        }
+      }
+      renderPackageDrawer(pkgKey, true);
+    });
+  });
+
+  // Drawer Close Button
+  document.getElementById('closePkgDrawer')?.addEventListener('click', () => {
+    const drawer = document.getElementById('funnelPkgDrawer');
+    if (drawer) drawer.classList.remove('open');
+  });
+
+  // Date Quick Chips
+  const dateInput = document.getElementById('funnelDate');
+  if (dateInput) {
+    dateInput.value = bookingFunnel.date;
+    dateInput.min = getFormattedDate(0);
+    dateInput.addEventListener('change', (e) => {
+      bookingFunnel.date = e.target.value;
+      document.querySelectorAll('.date-chip').forEach(c => c.classList.remove('active'));
+      updateFunnelSummary();
+    });
+  }
+
+  document.querySelectorAll('.date-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.date-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const days = chip.dataset.days;
+      let targetDate;
+      if (days === 'upcoming-weekend') {
+        targetDate = getUpcomingSaturday();
+      } else {
+        targetDate = getFormattedDate(parseInt(days, 10) || 0);
+      }
+      bookingFunnel.date = targetDate;
+      if (dateInput) dateInput.value = targetDate;
+      updateFunnelSummary();
+    });
+  });
+
+  // Guest Counters
   const adultVal = document.getElementById('funnelAdults');
   const childVal = document.getElementById('funnelChildren');
 
@@ -453,20 +677,30 @@ function initBookingFunnelModal() {
     }
   });
 
-  const dateInput = document.getElementById('funnelDate');
-  if (dateInput) {
-    dateInput.value = bookingFunnel.date;
-    dateInput.addEventListener('change', (e) => {
-      bookingFunnel.date = e.target.value;
-      updateFunnelSummary();
-    });
-  }
+  // Accordion Toggles (Click to Expand / Collapse)
+  initAccordionToggle('toggleDatePolicy', 'datePolicyBody');
+  initAccordionToggle('toggleHeightGuide', 'heightGuideBody');
+  initAccordionToggle('toggleSpecialNotes', 'specialNotesBody');
+  initAccordionToggle('toggleSummaryBreakdown', 'summaryBreakdownBody');
 
+  // Next / Prev Step Handlers
   nextBtn?.addEventListener('click', () => {
+    if (bookingFunnel.currentStep === 4) {
+      // Validate contact fields
+      const name = document.getElementById('custName')?.value.trim();
+      const phone = document.getElementById('custPhone')?.value.trim();
+      const email = document.getElementById('custEmail')?.value.trim();
+      if (!name || !phone || !email) {
+        alert('Please fill in your Name, Phone Number, and Email Address to proceed.');
+        return;
+      }
+    }
+
     if (bookingFunnel.currentStep < 5) {
       setFunnelStep(bookingFunnel.currentStep + 1);
     } else {
-      alert(`🎉 Booking Confirmation for ${bookingFunnel.adults} Adults & ${bookingFunnel.children} Kids on ${bookingFunnel.date}!\n\nOur concierge has received your request and will contact you with payment details.`);
+      const name = document.getElementById('custName')?.value || 'Valued Guest';
+      alert(`🎉 Reservation Confirmed for ${name}!\n\n${bookingFunnel.packageName}\nDate: ${bookingFunnel.date}\nGuests: ${bookingFunnel.adults} Adults, ${bookingFunnel.children} Kids\n\nOur concierge has received your request. An instant confirmation SMS & Email with your QR ticket voucher has been dispatched.`);
       overlay?.classList.remove('open');
       setFunnelStep(1);
     }
@@ -479,10 +713,61 @@ function initBookingFunnelModal() {
   });
 }
 
+function initAccordionToggle(toggleId, bodyId) {
+  const toggle = document.getElementById(toggleId);
+  const body = document.getElementById(bodyId);
+  if (!toggle || !body) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.classList.contains('open');
+    if (isOpen) {
+      toggle.classList.remove('open');
+      body.classList.remove('open');
+    } else {
+      toggle.classList.add('open');
+      body.classList.add('open');
+    }
+  });
+}
+
+function renderPackageDrawer(pkgKey, forceOpen = false) {
+  const drawer = document.getElementById('funnelPkgDrawer');
+  const titleEl = document.getElementById('funnelDrawerTitle');
+  const contentEl = document.getElementById('funnelDrawerContent');
+  if (!drawer || !titleEl || !contentEl) return;
+
+  const data = FUNNEL_PACKAGE_DETAILS[pkgKey] || FUNNEL_PACKAGE_DETAILS['water-amuse'];
+  titleEl.textContent = `✨ ${data.title} Inclusions`;
+
+  contentEl.innerHTML = `
+    <ul class="drawer-inclusions-list">
+      ${data.inclusions.map(inc => `<li><span>✓</span> ${inc}</li>`).join('')}
+    </ul>
+    <div class="drawer-meta-badges">
+      ${data.badges.map(b => `<span class="drawer-meta-badge">${b}</span>`).join('')}
+    </div>
+  `;
+
+  if (forceOpen) {
+    drawer.classList.add('open');
+  }
+}
+
 function openBookingModal(pkgId = 'water-amuse') {
   const overlay = document.getElementById('bookingModal');
   if (!overlay) return;
   overlay.classList.add('open');
+
+  // Select card corresponding to pkgId if available
+  const matchCard = document.querySelector(`.booking-choice-card[data-cat="${pkgId}"]`);
+  if (matchCard) {
+    document.querySelectorAll('.booking-choice-card').forEach(c => c.classList.remove('selected'));
+    matchCard.classList.add('selected');
+    bookingFunnel.category = pkgId;
+    bookingFunnel.packageRate = parseInt(matchCard.dataset.rate, 10) || 1599;
+    bookingFunnel.packageName = matchCard.dataset.pkgname || 'Water + Amusement Pass';
+  }
+
   setFunnelStep(1);
 }
 
@@ -511,14 +796,77 @@ function updateFunnelSummary() {
   const summaryGuests = document.getElementById('funnelSummaryGuests');
   const summaryPkg = document.getElementById('funnelSummaryPkg');
   const summaryTotal = document.getElementById('funnelSummaryTotal');
+  const mealScheduleEl = document.getElementById('funnelMealSchedule');
 
   if (summaryDate) summaryDate.textContent = bookingFunnel.date;
-  if (summaryGuests) summaryGuests.textContent = `${bookingFunnel.adults} Adults, ${bookingFunnel.children} Children`;
+  if (summaryGuests) summaryGuests.textContent = `${bookingFunnel.adults} Adults, ${bookingFunnel.children} ${bookingFunnel.children === 1 ? 'Child' : 'Children'}`;
   if (summaryPkg) summaryPkg.textContent = bookingFunnel.packageName;
 
-  // Rate formula: Adult rate + (Kid rate ~ 80%)
-  const total = (bookingFunnel.adults * bookingFunnel.packageRate) + (bookingFunnel.children * Math.round(bookingFunnel.packageRate * 0.8));
-  if (summaryTotal) summaryTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
+  if (bookingFunnel.packageRate === 0) {
+    if (summaryTotal) summaryTotal.textContent = 'Custom Quote (Free Enquiry)';
+  } else {
+    // Adult rate + (Kid rate ~ 80%)
+    const kidRate = Math.round(bookingFunnel.packageRate * 0.8);
+    const total = (bookingFunnel.adults * bookingFunnel.packageRate) + (bookingFunnel.children * kidRate);
+    if (summaryTotal) summaryTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
+  }
+
+  // Populate Step 5 Itinerary Preview
+  if (mealScheduleEl) {
+    const isStay = bookingFunnel.category === 'staycation';
+    const isWedding = bookingFunnel.category === 'wedding';
+
+    if (isWedding) {
+      mealScheduleEl.innerHTML = `
+        <div class="itinerary-step-pill">
+          <strong>👑 Royal Event Execution</strong>
+          <p>Full lawn layout setup, bespoke stage & auspicious mandap.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🍽 Multi-Cuisine Royal Feast</strong>
+          <p>Customized live counters, welcome drinks, desserts & midnight snacks.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🏨 Accommodation Inclusions</strong>
+          <p>67 Luxury Boutique Rooms reserved for bridal party and esteemed guests.</p>
+        </div>
+      `;
+    } else if (isStay) {
+      mealScheduleEl.innerHTML = `
+        <div class="itinerary-step-pill">
+          <strong>🕒 12:00 PM – Check-In & Welcome Drink</strong>
+          <p>Direct entry to your luxury air-conditioned room with garden view.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>💦 Unlimited Water & Amusement Access</strong>
+          <p>All 45+ thrill rides, wave pool, and mist gardens included for 2 full days.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🍳 07:30 AM – 10:30 AM: Lavish Buffet Breakfast</strong>
+          <p>Multi-cuisine morning feast at Baza Cafe & Restaurant.</p>
+        </div>
+      `;
+    } else {
+      mealScheduleEl.innerHTML = `
+        <div class="itinerary-step-pill">
+          <strong>🍳 09:30 AM – 10:30 AM: Welcome Breakfast</strong>
+          <p>Poori Aloo, Idli Sambhar, Poha, Halwa, Special Tea & Achaar.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🍲 01:00 PM – 02:30 PM: Royal Buffet Lunch</strong>
+          <p>Paneer Butter Masala, Dal Tadka, Seasonal Veg, Veg Chowmein, Steamed Rice, Tandoori Roti, Naan, Raita, Seviyan.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🍿 03:00 PM – 06:00 PM: Purani Dilli Live Chaat & Drinks</strong>
+          <p>Crispy Aloo Tikki, Gol Gappe (Pani Puri), Bhel Poori, Shikanjee, Jal Jeera & Masala Tea.</p>
+        </div>
+        <div class="itinerary-step-pill">
+          <strong>🎢 10:00 AM – 07:00 PM: Unlimited Park Access</strong>
+          <p>Water wave pool, 21+ thrill rides, 24+ adventure obstacle drills, puppet show & rain dance.</p>
+        </div>
+      `;
+    }
+  }
 }
 
 /* 7. Sticky Booking Dock */
@@ -554,14 +902,29 @@ function initTourModal() {
   });
 }
 
-/* 9. FAQ Accordion */
+/* 9. FAQ Accordion with Smooth Icon Updates */
 function initFaqAccordion() {
-  document.querySelectorAll('.faq-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      const isOpen = parent.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) parent.classList.add('open');
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const header = item.querySelector('.faq-header');
+    const icon = item.querySelector('.faq-toggle-icon');
+
+    header?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      items.forEach(i => {
+        i.classList.remove('open');
+        const h = i.querySelector('.faq-header');
+        const ic = i.querySelector('.faq-toggle-icon');
+        if (h) h.setAttribute('aria-expanded', 'false');
+        if (ic) ic.textContent = '+';
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        header.setAttribute('aria-expanded', 'true');
+        if (icon) icon.textContent = '−';
+      }
     });
   });
 }
@@ -739,6 +1102,54 @@ function initDiningTimeline() {
 
   foodCards.forEach(card => {
     card.addEventListener('click', () => selectMeal(card.dataset.triggerMeal));
+  });
+}
+
+/* 12. Continuous Right-to-Left Venues Carousel */
+function initVenuesCarousel() {
+  const viewport = document.getElementById('venuesCarousel');
+  const prevBtn = document.getElementById('venuePrevBtn');
+  const nextBtn = document.getElementById('venueNextBtn');
+  if (!viewport) return;
+
+  let autoScrollSpeed = 0.8;
+  let isPaused = false;
+  let animationId = null;
+
+  function autoScroll() {
+    if (!isPaused) {
+      // Loop smoothly when reaching half the track width (due to duplicated card set)
+      const halfWidth = viewport.scrollWidth / 2;
+      if (viewport.scrollLeft >= halfWidth) {
+        viewport.scrollLeft -= halfWidth;
+      } else {
+        viewport.scrollLeft += autoScrollSpeed;
+      }
+    }
+    animationId = requestAnimationFrame(autoScroll);
+  }
+
+  animationId = requestAnimationFrame(autoScroll);
+
+  // Pause on hover or touch
+  viewport.addEventListener('mouseenter', () => { isPaused = true; });
+  viewport.addEventListener('mouseleave', () => { isPaused = false; });
+  viewport.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+  viewport.addEventListener('touchend', () => {
+    setTimeout(() => { isPaused = false; }, 2500);
+  });
+
+  const scrollStep = 320;
+  prevBtn?.addEventListener('click', () => {
+    isPaused = true;
+    viewport.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    setTimeout(() => { isPaused = false; }, 3500);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    isPaused = true;
+    viewport.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    setTimeout(() => { isPaused = false; }, 3500);
   });
 }
 
